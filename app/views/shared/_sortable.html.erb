@@ -1,0 +1,28 @@
+<%= content_for :javascripts do %>
+  <%= javascript_include_tag "jquery-ui-base" %>
+<% end %>
+<%= content_for :footer_javascripts do %>
+  <script type="text/javascript">
+    $('#'+ "<%= tbody_name %>").sortable({
+      containment: 'parent',
+      axis: 'y',
+      dropOnEmpty: false,
+      handle: '.move',
+      cursor: 'crosshair',
+      items: "<%= container %>",
+      opacity: 1.0,
+      scroll: true,
+      update: function(){
+        $.ajax({
+          type: 'post',
+          data: $('#'+"<%= tbody_name %>").sortable('serialize'),
+          dataType: 'script',
+          complete: function(request){
+            $('#'+"<%= tbody_name %>").effect('highlight');
+          },
+          url: "<%= url %>"
+        });
+      }
+    });
+  </script>
+<% end %>
