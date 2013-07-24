@@ -9,7 +9,7 @@ module SortableHelper
 
   def link_to_move(object)
     dom_identifier = "#{object.class.to_s.downcase}_#{object.id}_move"
-    link_to image_tag("/assets/sortable/move.png", :alt => t('move')), '',
+    link_to image_tag("sortable/move.png", :alt => t('move')), '',
             :title => t('move'),
             :id => dom_identifier,
             :class => "move",
