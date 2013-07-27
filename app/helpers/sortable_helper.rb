@@ -15,4 +15,11 @@ module SortableHelper
             :class => "move",
             :onclick => "return false;"
   end
+
+  def sortable_css_classes(object)
+    classes = []
+    classes << 'sortable-first' if object.first?
+    classes << 'sortable-last' if object.last?
+    classes.join(' ')
+  end
 end
