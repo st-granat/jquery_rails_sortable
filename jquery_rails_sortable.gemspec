@@ -7,7 +7,7 @@ Gem::Specification.new do |gem|
   gem.email         = ["railscode@gmail.com"]
   gem.description   = "JQuery Rails Sortable"
   gem.summary       = "summary"
-  gem.homepage      = "https://github.com/vav/jquery_rails_sortable"
+  gem.homepage      = "https://github.com/st-granat/jquery_rails_sortable"
 
   gem.files         = `git ls-files`.split($\)
   gem.executables   = gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }
